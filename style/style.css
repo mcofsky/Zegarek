@@ -55,6 +55,7 @@ body nav .burgerWrapper label {
   cursor: pointer;
 }
 body nav .burgerWrapper label > div {
+  transition: 0.5;
   height: 6px;
   background-color: #000;
   position: absolute;
@@ -82,16 +83,35 @@ body nav .burgerWrapper input {
 }
 body nav .burgerWrapper ol {
   z-index: -1;
+  margin: 0;
+  background-color: #fdf6eb;
   position: absolute;
   top: -100vh;
   transition: 0.5s;
   display: flex;
   flex-direction: column;
-  right: -2rem;
+  right: -0.7rem;
   padding: 20px 10px;
   list-style: none;
   width: 100vw;
 }
 body nav .burgerWrapper #toggler:checked ~ ol {
   top: 100%;
+}
+body nav .burgerWrapper #toggler:checked ~ label > div {
+  transition: 0.5;
+  top: calc(1rem - 3px);
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(1) {
+  transform: rotate(45deg);
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(2) {
+  opacity: 0;
+}
+body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) {
+  transform: rotate(-45deg);
+}
+body main {
+  position: relative;
+  z-index: -2;
 }/*# sourceMappingURL=style.css.map */

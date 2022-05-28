@@ -1,14 +1,16 @@
 $navButtonSize: 2rem;
+$bgColor: #fdf6eb;
+$barHeight:6px;
 *{box-sizing:border-box;}
 body {
-    background-color: #fdf6eb;
+    background-color: $bgColor;
     font-family: 'Lemon/Milk', sans-serif;
     // font-family: 'Lemon/Milk light', sans-serif;
     margin: 0;
     nav {
 
         position: relative;
-        background-color: #fdf6eb;
+        background-color: $bgColor;
         display: flex;
         justify-content: space-between;
         padding: 2rem 2 rem .5rem 2rem;
@@ -39,7 +41,7 @@ body {
               top:0;
               z-index:-1;
               box-sizing: border-box;
-              background-color: #fdf6eb;
+              background-color: $bgColor;
           
 
             }
@@ -64,7 +66,7 @@ body {
           //   < - oznacza bezpośrednie dzieci divy od labela
           //  nie obejmuje wnuków labela
            > div{
-             $barHeight:6px;
+            transition: .5;
              height:$barHeight;
              background-color: #000;
              position:absolute;
@@ -103,27 +105,56 @@ body {
              display: none;
          }
          ol {
-            //  display: none;
             z-index: -1;
+            margin: 0;
+            background-color: $bgColor;
             position: absolute;
             top:-100vh;
             transition: .5s;
             display:flex;
             flex-direction: column;
-            right: -2rem;
+            right: -.7rem;
             padding: 20px 10px;
             list-style:none;
             width:100vw;
+            
 
          }
+        // po kliknięciu na burger 
          #toggler:checked ~ {
             ol{
-                
                 top: 100%;
                 
+            }
+            label > div{
+              // krzyżyk
+              transition: .5;
+              top: calc($navButtonSize / 2 - $barHeight / 2);
+              &:nth-child(1){
+                transform: rotate(45deg);
+                
+              }
+              &:nth-child(2){
+                opacity: 0;
+            
+                
+              }
+              &:nth-child(3){
+                transform: rotate(-45deg);
+            
+              //  // kropeczka na środku
+              //  div:nth-child(1){display:none;}
+              //  background-color: #000; 
+              //  justify-content: center;
+              }
+              
             }
         }   
         }
     
+    }
+    main {
+      position: relative;
+      z-index: -2;
     }
 }
