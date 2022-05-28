@@ -6,7 +6,8 @@ body {
     // font-family: 'Lemon/Milk light', sans-serif;
     margin: 0;
     nav {
-        z-index:1;
+
+        position: relative;
         background-color: #fdf6eb;
         display: flex;
         justify-content: space-between;
@@ -17,6 +18,7 @@ body {
             
             display: flex;
             align-items: center;
+            z-index:2;
             img {
                 width: $navButtonSize;
                 height: $navButtonSize;
@@ -28,6 +30,21 @@ body {
                 
 
             }
+            &:before{
+              content:"";
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              left: 0;
+              top:0;
+              z-index:-1;
+              box-sizing: border-box;
+              background-color: #fdf6eb;
+          
+
+            }
+
+            
 
         }
         .burgerWrapper{
@@ -36,6 +53,7 @@ body {
          position: relative;
          margin-right:.7rem;
          label{
+           z-index: 2;
            right:0;
            margin-right:.7rem;
         //    border:2px dashed #000;
@@ -43,14 +61,24 @@ body {
            height: $navButtonSize;
            position:absolute;
            cursor:pointer;
+          //   < - oznacza bezpośrednie dzieci divy od labela
+          //  nie obejmuje wnuków labela
            > div{
              $barHeight:6px;
              height:$barHeight;
              background-color: #000;
              position:absolute;
              width:100%;
+            //   & - odnosi się do selektora, wewnątrz którego się znaduje
              &:nth-child(2){
+              //  połowa nabela - jego wysokość/2
+              // = $navButtonsize/2
                top: calc($navButtonSize / 2 - $barHeight / 2);
+              //  przesuń diva na środek labela
+              // margin-top: calc($navButtonSize/2)
+              //  przesuń środek diva na środek labela
+              // top: calc($barHeight / 2 - $barHeight)
+          
              }
              &:nth-child(3){
                bottom:0;
@@ -76,16 +104,16 @@ body {
          }
          ol {
             //  display: none;
+            z-index: -1;
             position: absolute;
             top:-100vh;
             transition: .5s;
             display:flex;
             flex-direction: column;
-            position: absolute;
             right: -2rem;
             padding: 20px 10px;
             list-style:none;
-            width:100vh;
+            width:100vw;
 
          }
          #toggler:checked ~ {
