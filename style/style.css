@@ -197,7 +197,17 @@ body main .contentContainer {
 }
 body main .contentContainer .buttonContainer {
   text-align: center;
-  padding: 2.7rem;
+  padding: 2.7rem 0;
+}
+body main .contentContainer .buttonContainer button:before {
+  content: "";
+  background-image: url("../img/arrow.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 4rem;
+  height: 2rem;
+  margin-left: 8rem;
 }
 body main .contentContainer .imgWrapper .img {
   border: 2px dashed red;
@@ -296,6 +306,16 @@ nav .buttons {
   main .titleWrapper button {
     display: flex !important;
     margin: 2rem 0;
+  }
+  main .titleWrapper button:before {
+    content: "";
+    background-image: url("../img/arrow.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 8rem;
+    height: 4rem;
+    margin-left: 8rem;
   }
   main .imgContainer {
     border: none !important;

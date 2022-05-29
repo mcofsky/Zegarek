@@ -7,6 +7,23 @@ $defaultFont: 'Lemon/Milk', sans-serif;
 $lightFont: 'Lemon/Milk light', sans-serif;
 *{box-sizing:border-box;}
 
+  
+  @mixin arrow($width, $height, $margin){
+    &:before{
+      content: "";
+      background-image: url("../img/arrow.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      // width: 4rem;
+      // height: 2rem;
+      position: absolute;
+      width:$width;
+      height: $height;
+      margin-left: $margin;
+      // margin-left: 8rem;
+    } 
+    
+  }
 a{
   text-decoration: none;
   color: inherit;
@@ -244,7 +261,10 @@ body {
         padding: 0 1rem;
         .buttonContainer {
           text-align: center;
-          padding: $globalPadding;
+          padding: $globalPadding 0;
+          button{
+            @include arrow(4rem, 2rem, 8rem);
+          }
 
         }
         .imgWrapper{
@@ -363,6 +383,7 @@ body {
     button{
       display: flex !important;
       margin: 2rem 0;
+      @include arrow(8rem,4rem, 8rem)
     }
   }
   .imgContainer{
