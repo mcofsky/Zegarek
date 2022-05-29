@@ -3,12 +3,21 @@ $bgColor: #fdf6eb;
 $barHeight:6px;
 $globalPadding: 2.7rem;
 $border: 2px solid black;
+$defaultFont: 'Lemon/Milk', sans-serif;
+$lightFont: 'Lemon/Milk light', sans-serif;
 *{box-sizing:border-box;}
+
+a{
+  text-decoration: none;
+  color: inherit;
+  // inherit - dostosowuje się do rodzica
+}
+
 body {
   z-index: -3;
   position: relative;
     background-color: $bgColor;
-    font-family: 'Lemon/Milk', sans-serif;
+    font-family: $defaultFont;
     // font-family: 'Lemon/Milk light', sans-serif;
     margin: 0;
     nav {
@@ -155,6 +164,9 @@ body {
             }
         }   
         }
+        .buttons {
+          display:none;
+        }
     
     }
     main {
@@ -170,7 +182,7 @@ body {
 
         }
         p{
-          font-family:'Lemon/Milk light', sans-serif;
+          font-family:$lightFont;
           margin: 1rem 0; 
         
         }
@@ -250,6 +262,9 @@ body {
         .contentWrapper {
          p{
            text-align: center;
+           padding: 2rem 0;
+           margin: 0;
+           line-height: 2rem;
          } 
         }
       }
@@ -258,10 +273,17 @@ body {
         border-bottom: $border;
         .trending{
           background-color: #FFEE01;
-          margin: $globalPadding;
+          margin:0 $globalPadding;
           border-left: $border;
           border-right: $border;
           text-align: center;
+          padding: 4rem 0;
+          display:flex;
+          justify-content: center;
+          p{
+            margin:0;
+            font-size: 1,5rem;
+          }
 
         
         }
@@ -271,3 +293,51 @@ body {
 
 
 }
+
+// Laptop view
+@media (min-width:1280px){
+  nav{
+    padding:0 3rem !important;
+    .logoWrapper:before{
+      display:none;
+    }
+    .burgerWrapper{
+      flex: 1;
+      padding: 0 2rem;
+      border-left:$border;
+      border-right: $border;
+      font-family: $defaultFont;
+      font-size: .8rem;
+      
+      ol{
+        top:0 !important;
+        position:relative !important;
+        z-index:3 !important;
+        width:auto !important;
+        right: auto !important;
+        flex-direction: row !important;
+        flex: 1;
+        justify-content: space-evenly;
+
+        
+        
+      
+        
+      }
+      label{
+        display:none;
+      }
+    }
+.buttons {
+  display:flex !important;
+  align-items: center;
+  a{margin: 1rem;}
+  
+}
+.logoWrapper,
+.buttons{
+  padding: 2.5rem 2rem;
+
+}
+  }
+  }

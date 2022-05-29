@@ -2,6 +2,11 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   z-index: -3;
   position: relative;
@@ -113,6 +118,9 @@ body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(2) {
 body nav .burgerWrapper #toggler:checked ~ label > div:nth-child(3) {
   transform: rotate(-45deg);
 }
+body nav .buttons {
+  display: none;
+}
 body main {
   position: relative;
   z-index: -2;
@@ -200,6 +208,9 @@ body main .contentContainer .imgWrapper .img {
 }
 body main .contentContainer .contentWrapper p {
   text-align: center;
+  padding: 2rem 0;
+  margin: 0;
+  line-height: 2rem;
 }
 body main .trendingWrapper {
   border-top: 2px solid black;
@@ -207,8 +218,56 @@ body main .trendingWrapper {
 }
 body main .trendingWrapper .trending {
   background-color: #FFEE01;
-  margin: 2.7rem;
+  margin: 0 2.7rem;
   border-left: 2px solid black;
   border-right: 2px solid black;
   text-align: center;
+  padding: 4rem 0;
+  display: flex;
+  justify-content: center;
+}
+body main .trendingWrapper .trending p {
+  margin: 0;
+  font-size: 1, 5rem;
+}
+
+@media (min-width: 1280px) {
+  nav {
+    padding: 0 3rem !important;
+  }
+  nav .logoWrapper:before {
+    display: none;
+  }
+  nav .burgerWrapper {
+    flex: 1;
+    padding: 0 2rem;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+    font-family: "Lemon/Milk", sans-serif;
+    font-size: 0.8rem;
+  }
+  nav .burgerWrapper ol {
+    top: 0 !important;
+    position: relative !important;
+    z-index: 3 !important;
+    width: auto !important;
+    right: auto !important;
+    flex-direction: row !important;
+    flex: 1;
+    justify-content: space-evenly;
+  }
+  nav .burgerWrapper label {
+    display: none;
+  }
+  nav .buttons {
+    display: flex !important;
+    align-items: center;
+  }
+  nav .buttons a {
+    margin: 1rem;
+  }
+  nav .logoWrapper,
+nav .buttons {
+    padding: 2.5rem 2rem;
+  }
 }/*# sourceMappingURL=style.css.map */
