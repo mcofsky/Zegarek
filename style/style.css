@@ -7,6 +7,34 @@ a {
   color: inherit;
 }
 
+button {
+  border-radius: 0;
+  padding: 0.7rem 2.5rem;
+  background-color: #FF5202;
+  border: 2px solid black;
+  position: relative;
+  cursor: pointer;
+}
+button:after {
+  content: "";
+  border: 2px solid black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #fdf6eb;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: -1;
+}
+button:active {
+  top: 0.5rem;
+  left: 0.5rem;
+}
+button:active:after {
+  top: 0;
+  left: 0;
+}
+
 body {
   z-index: -3;
   position: relative;
@@ -171,33 +199,6 @@ body main .contentContainer .buttonContainer {
   text-align: center;
   padding: 2.7rem;
 }
-body main .contentContainer .buttonContainer button {
-  border-radius: 0;
-  padding: 0.7rem 2.5rem;
-  background-color: #FF5202;
-  border: 2px solid black;
-  position: relative;
-  cursor: pointer;
-}
-body main .contentContainer .buttonContainer button:after {
-  content: "";
-  border: 2px solid black;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: #fdf6eb;
-  top: 0.5rem;
-  left: 0.5rem;
-  z-index: -1;
-}
-body main .contentContainer .buttonContainer button:active {
-  top: 0.5rem;
-  left: 0.5rem;
-}
-body main .contentContainer .buttonContainer button:active:after {
-  top: 0;
-  left: 0;
-}
 body main .contentContainer .imgWrapper .img {
   border: 2px dashed red;
   min-height: 60vh;
@@ -269,5 +270,75 @@ body main .trendingWrapper .trending p {
   nav .logoWrapper,
 nav .buttons {
     padding: 2.5rem 2rem;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    margin: 0 6rem;
+    margin-bottom: 6rem;
+  }
+  main .titleWrapper {
+    padding: 3rem 2rem 4rem 2rem !important;
+    margin: 0 !important;
+    border-bottom: 2px solid black;
+  }
+  main .titleWrapper h2 {
+    font-size: 3rem !important;
+  }
+  main .titleWrapper h2 img {
+    transform: scale(2.4);
+    margin-left: 2rem;
+  }
+  main .titleWrapper p {
+    max-width: 70%;
+  }
+  main .titleWrapper button {
+    display: flex !important;
+    margin: 2rem 0;
+  }
+  main .imgContainer {
+    border: none !important;
+  }
+  main .imgContainer .imgWrapper {
+    height: 100%;
+    margin: 0 !important;
+  }
+  main .imgContainer .imgWrapper .img {
+    min-height: 100% !important;
+  }
+  main .contentContainer {
+    margin: 0 !important;
+    display: flex;
+    padding: 0 !important;
+    border-bottom: 2px solid black;
+    border-right: none !important;
+  }
+  main .contentContainer .buttonContainer {
+    display: none;
+  }
+  main .contentContainer .imgWrapper {
+    flex: 1;
+  }
+  main .contentContainer .imgWrapper .img {
+    min-height: 100% !important;
+    border: none !important;
+  }
+  main .contentContainer .contentWrapper {
+    flex: 3;
+    padding: 2rem 3rem;
+    font-family: "Lemon/Milk light", sans-serif;
+    font-size: 1.5rem;
+  }
+  main .contentContainer .contentWrapper p {
+    text-align: left !important;
+  }
+  main .trendingWrapper {
+    border-top: none !important;
+  }
+  main .trendingWrapper .trending {
+    margin: 0 !important;
+    min-height: 100%;
+    align-items: center;
   }
 }/*# sourceMappingURL=style.css.map */
